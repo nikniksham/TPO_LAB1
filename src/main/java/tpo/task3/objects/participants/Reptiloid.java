@@ -5,6 +5,7 @@ import tpo.task3.objects.Suit.LabCoat;
 
 public class Reptiloid extends Creature {
     protected String name = "Рептилоид";
+    protected Integer max_temperature = 120;
     @Override
     public String getName() {
         return name;
@@ -16,5 +17,11 @@ public class Reptiloid extends Creature {
         }
         this.clothes = clothes;
         return getName() + " надел " + clothes.getName();
+    }
+
+    @Override
+    public boolean stayOnSun() {
+        temperature += 10;
+        return temperature >= max_temperature;
     }
 }

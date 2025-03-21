@@ -11,6 +11,17 @@ abstract public class Creature {
     protected String name = "Существо";
     protected List<Profession> professions = new ArrayList<>();
     protected Clothes clothes = null;
+    protected Integer temperature = 30;
+    protected Integer max_temperature = 60;
+
+    public Integer getTemperature() {
+        return temperature;
+    }
+
+    public boolean stayOnSun() {
+        temperature += 10;
+        return temperature >= max_temperature;
+    }
 
     public String getName() {
         return name;

@@ -26,4 +26,14 @@ public class Committee {
         }
         return result;
     }
+
+    public void stayAndStare() {
+        List<Creature> creatures_copy = creatures.stream().toList();
+        for (Creature creature : creatures_copy) {
+            if (creature.stayOnSun()) {
+                System.out.println(creature.getName() + " перегрелся на солнце и пошёл домой");
+                creatures.remove(creature);
+            }
+        }
+    }
 }

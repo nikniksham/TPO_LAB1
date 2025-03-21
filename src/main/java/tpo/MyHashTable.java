@@ -4,6 +4,7 @@ import javax.swing.plaf.PanelUI;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MyHashTable {
     private List<Integer>[] innerShit = new List[13];
@@ -84,6 +85,13 @@ public class MyHashTable {
         String padding = new String(new char[width - text.length()]).replace('\0', fillChar);
 
         return padding + text;
+    }
+
+    public List<Integer> getBasketContent(int basketNum) {
+        if (basketNum < 0 || basketNum > innerShit.length) {
+            return null;
+        }
+        return new ArrayList<>(innerShit[basketNum]);
     }
 
 }

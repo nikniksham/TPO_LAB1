@@ -75,4 +75,17 @@ public class CommitteeTest {
                 "Максимегалактик, без одежды, имеет следующие профессии: Учёный, \n" +
                 "Рептилоид, одет в Лабораторный халат, имеет следующие профессии: Учёный, Инженер, \n", committee.describe(), "Описание комиссии работает неправильно!");
     }
+
+    @Test
+    @DisplayName("Проверяем стойкость участников комиссии")
+    public void test_durability() {
+        committee.addNewCreature(humanoid);
+        committee.addNewCreature(reptiloid);
+        committee.stayAndStare();
+        committee.stayAndStare();
+        committee.stayAndStare();
+        committee.stayAndStare();
+        Assertions.assertEquals("Описание комиссии:\n" +
+                "Рептилоид, без одежды, безработный\n", committee.describe());
+    }
 }
