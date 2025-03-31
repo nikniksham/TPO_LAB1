@@ -85,6 +85,9 @@ public class CommitteeTest {
         committee.stayAndStare();
         committee.stayAndStare();
         committee.stayAndStare();
+        Assertions.assertEquals(reptiloid.getTemperature(), 70);
+        committee.stayAndStare();
+        Assertions.assertEquals(reptiloid.getTemperature(), 80);
         Assertions.assertEquals("Описание комиссии:\n" +
                 "Рептилоид, без одежды, безработный\n", committee.describe());
     }
